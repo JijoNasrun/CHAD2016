@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 /*
   Generated class for the ParticipantList page.
 
@@ -12,11 +13,12 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'participant-list.html'
 })
 export class ParticipantListPage {
+	public people: any;
 
-  constructor(public navCtrl: NavController) {}
-
-  ionViewDidLoad() {
-    console.log('Hello ParticipantListPage Page');
-  }
+	  constructor(public navCtrl: NavController, public http: Http) {
+	  	this.http.get('https://randomuser.me/api/?results=10').map(res => res.json()).subscribe(data => {
+	  		this.people = data.results;
+	  	});
+	  }
 
 }

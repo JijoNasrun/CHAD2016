@@ -2,18 +2,14 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { Page1 } from '../pages/page1/page1';
+import { LoginPage } from '../pages/login/login';
 import { FilesPage } from '../pages/files/files';
-
+import { ProfilePage } from '../pages/profile/profile'
 import { ParticipantListPage } from '../pages/participant-list/participant-list';
 import { SpeakerListPage } from '../pages/speaker-list/speaker-list';
 import { FeedbacksPage } from '../pages/feedbacks/feedbacks';
 import { PollsPage } from '../pages/polls/polls';
 import { TentativePage } from '../pages/tentative/tentative';
-
-
-
-
 
 @Component({
   templateUrl: 'app.html'
@@ -21,7 +17,7 @@ import { TentativePage } from '../pages/tentative/tentative';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = Page1;
+  rootPage = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -30,18 +26,13 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Profile', component: Page1 },
+      { title: 'Profile', component: ProfilePage },
       { title: 'Tentative', component: TentativePage },
       { title: 'Participant List', component: ParticipantListPage },
       { title: 'Speaker List', component: SpeakerListPage },
       { title: 'Polls', component: PollsPage },
       { title: 'Files', component: FilesPage },
       { title: 'Feedbacks', component: FeedbacksPage }
-      
-     
-      
-     
-      
     ];
 
   }
