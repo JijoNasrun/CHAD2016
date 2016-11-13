@@ -13,9 +13,10 @@ import { NavController } from 'ionic-angular';
 })
 export class TentativePage {
 
+  program: string = "day1";
   constructor(public navCtrl: NavController) {
 
-  this.program ="day1";
+  
 
   }
 
