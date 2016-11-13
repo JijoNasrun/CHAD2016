@@ -13,7 +13,13 @@ import { NavController } from 'ionic-angular';
 })
 export class TentativePage {
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController) {
+
+  this.program ="day1";
+
+  }
+
+  
 
   ionViewDidLoad() {
     console.log('Hello TentativePage Page');
