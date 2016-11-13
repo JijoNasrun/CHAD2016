@@ -13,11 +13,11 @@ import 'rxjs/add/operator/map';
   templateUrl: 'participant-list.html'
 })
 export class ParticipantListPage {
-	public people: any;
+	public participant: any;
 
 	  constructor(public navCtrl: NavController, public http: Http) {
-	  	this.http.get('https://randomuser.me/api/?results=10').map(res => res.json()).subscribe(data => {
-	  		this.people = data.results;
+	  	this.http.get('http://192.168.0.222:3000/mobile_participants/index.json').map(res => res.json()).subscribe(data => {
+	  		this.participant = data.participants;
 	  	});
 	  }
 

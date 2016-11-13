@@ -8,15 +8,15 @@
   </ion-navbar>
 </ion-header>
 
-
+<!-- reg_fullname, reg_email -->
 <ion-content padding>
 	<ion-list>
-    <ion-item *ngFor="let person of people">
+    <ion-item *ngFor="let person of participant">
       <ion-avatar item-left>
-        <img src="{{person.picture.thumbnail}}">
+        <img src="http://192.168.0.222:3000/uploads/registration/reg_image/{{person.registrations_id}}/{{person.reg_image}}">
       </ion-avatar>
-      <h2>{{person.name.first}} {{person.name.last}}</h2>
-      <p>{{person.email}}</p>
+      <h2>Name : {{person.reg_fullname}}</h2>
+      <p>Email : {{person.reg_email}}
     </ion-item>
   	</ion-list>
 </ion-content>

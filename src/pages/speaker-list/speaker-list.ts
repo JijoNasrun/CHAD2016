@@ -14,11 +14,11 @@ import 'rxjs/add/operator/map';
   templateUrl: 'speaker-list.html'
 })
 export class SpeakerListPage {
-	public people: any;
+	public speaker: any;
 
 	  constructor(public navCtrl: NavController, public http: Http) {
-	  	this.http.get('https://randomuser.me/api/?results=10').map(res => res.json()).subscribe(data => {
-	  		this.people = data.results;
+	  	this.http.get('http://192.168.0.222:3000/mobile_participants/index.json').map(res => res.json()).subscribe(data => {
+	  		this.speaker = data.presenters;
 	  	});
 	  }
 
