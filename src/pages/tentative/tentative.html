@@ -7,12 +7,47 @@
 <ion-header>
 
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Tentative</ion-title>
   </ion-navbar>
+  <div padding>
+  <ion-segment [(ngModel)]="program">
+    <ion-segment-button value="day1">
+      Day 1
+    </ion-segment-button>
+    <ion-segment-button value="day2">
+      Day 2
+    </ion-segment-button>
+  </ion-segment>
+</div>
 
 </ion-header>
 
-
 <ion-content padding>
+<div [ngSwitch]="program">
+  <ion-list *ngSwitchCase="'day1'">
+    <ion-item>
+     	<h3>8:00-8:30</h3> Registration & Breakfast
+    </ion-item>
+     <ion-item>
+        <h3>8:30-8:45</h3> Welcoming Address <h3>YBhg Dato' Dr. Abu Bakar Majeed<br>Chairman CHAD 2016</h3>
+    </ion-item>
+     <ion-item>
+        <h3>8:45-9:45</h3> Opening Address <h3>YBhg Dato' Dr. Professor Hassan Said</h3>
+    </ion-item>
+    
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'day2'">
+    <ion-item>
+    Baring baring
+    </ion-item>
+    <ion-item>
+    Golek golek
+    </ion-item>
+  </ion-list>
+</div>
 
 </ion-content>

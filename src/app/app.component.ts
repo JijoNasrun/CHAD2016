@@ -7,6 +7,9 @@ import { FilesPage } from '../pages/files/files';
 
 import { ParticipantListPage } from '../pages/participant-list/participant-list';
 import { SpeakerListPage } from '../pages/speaker-list/speaker-list';
+import { FeedbacksPage } from '../pages/feedbacks/feedbacks';
+import { PollsPage } from '../pages/polls/polls';
+import { TentativePage } from '../pages/tentative/tentative';
 
 
 
@@ -27,10 +30,14 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Page One', component: Page1 },
-      { title: 'Files', component: FilesPage },
+      { title: 'Profile', component: Page1 },
+      { title: 'Tentative', component: TentativePage },
       { title: 'Participant List', component: ParticipantListPage },
       { title: 'Speaker List', component: SpeakerListPage },
+      { title: 'Polls', component: PollsPage },
+      { title: 'Files', component: FilesPage },
+      { title: 'Feedbacks', component: FeedbacksPage }
+      
      
       
      
