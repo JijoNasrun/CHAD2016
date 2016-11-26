@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 /*
   Generated class for the Speakerprofile page.
@@ -12,11 +12,13 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'speakerprofile.html'
 })
 export class SpeakerprofilePage {
-
-  constructor(public navCtrl: NavController) {}
-
-  ionViewDidLoad() {
-    console.log('Hello SpeakerprofilePage Page');
+  public speakerName : any;
+  public speakerEmail : any;
+  public speakerImage : any;
+  constructor(public navCtrl: NavController, public params:NavParams) {
+  	this.speakerName = params.get("speakerName");
+  	this.speakerEmail = params.get("speakerEmail");
+    this.speakerImage = params.get("speakerImage");
   }
 
 }
