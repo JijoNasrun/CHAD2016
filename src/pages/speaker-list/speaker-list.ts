@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Http } from '@angular/http';
+import { SpeakerprofilePage } from '../speakerprofile/speakerprofile';
 import 'rxjs/add/operator/map';
 
 /*
@@ -17,9 +18,18 @@ export class SpeakerListPage {
 	public speaker: any;
 
 	  constructor(public navCtrl: NavController, public http: Http) {
-	  	this.http.get('http://192.168.0.222:3000/mobile_participants/index.json').map(res => res.json()).subscribe(data => {
-	  		this.speaker = data.presenters;
+	  	this.http.get('http://10.163.1.105:8080/mobile_participants/index.json').map(res => res.json()).subscribe(data => {
+	  		this.speaker = data.participants;
+	  		//presenters
 	  	});
+	  }
+	  goToSpeakerPage(speakername, speakeremail, speakerimage){
+	  	this.navCtrl.push(SpeakerprofilePage, {
+	  		speakerName: speakername,
+	  		speakerEmail: speakeremail,
+	  		speakerImage: speakerimage
+	  		});
+	  	//, {speakerName : speakername, speakerEmail : speakeremail}
 	  }
 
 }

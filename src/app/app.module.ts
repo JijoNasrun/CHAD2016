@@ -10,6 +10,7 @@ import { SpeakerListPage } from '../pages/speaker-list/speaker-list';
 import { FeedbacksPage } from '../pages/feedbacks/feedbacks';
 import { PollsPage } from '../pages/polls/polls';
 import { TentativePage } from '../pages/tentative/tentative';
+import { SpeakerprofilePage } from '../pages/speakerprofile/speakerprofile';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { TentativePage } from '../pages/tentative/tentative';
     PollsPage,FeedbacksPage,
     ParticipantListPage,
     SpeakerListPage,
-    FilesPage
+    FilesPage,
+    SpeakerprofilePage,
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -35,7 +37,8 @@ import { TentativePage } from '../pages/tentative/tentative';
     PollsPage,FeedbacksPage,
     ParticipantListPage,
     SpeakerListPage,
-    FilesPage
+    FilesPage,
+    SpeakerprofilePage,
   ],
   providers: []
 })

@@ -11,6 +11,7 @@ import { FeedbacksPage } from '../pages/feedbacks/feedbacks';
 import { PollsPage } from '../pages/polls/polls';
 import { TentativePage } from '../pages/tentative/tentative';
 
+
 @Component({
   templateUrl: 'app.html'
 })
