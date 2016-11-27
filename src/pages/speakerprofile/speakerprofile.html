@@ -14,9 +14,12 @@
 <ion-list>
 	<ion-grid>
 	<ion-row>
+		<!--<img src="http://10.163.1.105:8080/uploads/registration/reg_image/{{speakerID}}/{{speakerImage}}">-->
+		<ion-col></ion-col>
 		<ion-col>
-        	<img src="http://10.163.1.105:8080/uploads/registration/reg_image/{{speakerID}}/{{speakerImage}}">
+        	<img text-center src="http://greatives.eu/themes/osmosis-corporate/wp-content/uploads/2014/12/person-01.png">
 		</ion-col>
+		<ion-col></ion-col>
 	</ion-row>
 	<ion-row>
 		<ion-col>
@@ -43,9 +46,9 @@
 	<ion-row>
 		<ion-col>
 			<ion-card>
-				<ion-item>
+				<ion-item padding>
 					<ion-avatar item-left>
-        				<img src="http://10.163.1.105:8080/uploads/registration/reg_image/{{speakerID}}/{{speakerImage}}">
+					<img text-center src="http://greatives.eu/themes/osmosis-corporate/wp-content/uploads/2014/12/person-01.png">
 					</ion-avatar>
 					<h2>{{speakerName}}</h2>
 					<p>{{speakerEmail}}</p>
@@ -55,27 +58,125 @@
 		</ion-col>
 	</ion-row>
 	<ion-row>
+		<ion-card>
+			<ion-card-header>
+				<h2><strong>Speaker Feedback</strong></h2><hr>
+			</ion-card-header>
+		<ion-row radio-group>
+			<ion-col width-33>
+				<ion-item>
+					<ion-label text-center>Speaker Quality</ion-label>
+				</ion-item>
+			</ion-col>
+			<ion-col>
+				<ion-label>Very Dissatisfied</ion-label>
+				<div class="radiovd">
+					<ion-radio value="1"> 
+					<ion-icon name="checkmark-circle-outline"></ion-icon>
+					</ion-radio>
+				</div>
+			</ion-col>
+			<ion-col>
+				<ion-label>Dissatisfied</ion-label>
+				<div class="radiod">
+				<ion-radio value="2"> 
+				<ion-icon name="checkmark-circle-outline"></ion-icon>
+				</ion-radio>
+				</div>
+			</ion-col>
+			<ion-col>
+				<ion-label>Normal</ion-label>
+				<div class="radion">
+				<ion-radio value="3"> 
+				<ion-icon name="checkmark-circle-outline"></ion-icon>
+				</ion-radio>
+				</div>
+			</ion-col>
+			<ion-col>
+				<ion-label>Satisfied</ion-label>
+				<div class="radios">
+				<ion-radio value="4"> 
+				<ion-icon name="checkmark-circle-outline"></ion-icon>
+				</ion-radio>
+				</div>
+			</ion-col>
+			<ion-col>
+				<ion-label>Very Satisfied</ion-label>
+				<div class="radiovs">
+				<ion-radio value="5"> 
+				<ion-icon name="checkmark-circle-outline"></ion-icon>
+				</ion-radio>
+				</div>
+			</ion-col>
+		</ion-row>
+		<hr>
+		<ion-row radio-group>
+			<ion-col width-33>
+				<ion-item>
+					<ion-label text-center>Value and Relevance of Content</ion-label>
+				</ion-item>
+			</ion-col>
+			<ion-col>
+				<ion-label>Very Dissatisfied</ion-label>
+				<div class="radiovd">
+				<ion-radio value="1"> 
+				<ion-icon name="checkmark-circle-outline"></ion-icon>
+				</ion-radio>
+				</div>
+			</ion-col>
+			<ion-col>
+				<ion-label>Dissatisfied</ion-label>
+				<div class="radiod">
+				<ion-radio value="2"> 
+				<ion-icon name="checkmark-circle-outline"></ion-icon>
+				</ion-radio>
+				</div>
+			</ion-col>
+			<ion-col>
+				<ion-label>Normal</ion-label>
+				<div class="radion">
+				<ion-radio value="3"> 
+				<ion-icon name="checkmark-circle-outline"></ion-icon>
+				</ion-radio>
+				</div>
+			</ion-col>
+			<ion-col>
+				<ion-label>Satisfied</ion-label>
+				<div class="radios">
+				<ion-radio value="4"> 
+				<ion-icon name="checkmark-circle-outline"></ion-icon>
+				</ion-radio>
+				</div>
+			</ion-col>
+			<ion-col>
+				<ion-label>Very Satisfied</ion-label>
+				<div class="radiovs">
+				<ion-radio value="5"> 
+				<ion-icon name="checkmark-circle-outline"></ion-icon>
+				</ion-radio>
+				</div>
+			</ion-col>
+		</ion-row>
+		<hr>
+		<ion-row>
+			<ion-col width-33>
+				<ion-item>
+					<ion-label text-center>Please leave any comment</ion-label>
+				</ion-item>
+			</ion-col>
+			<ion-col>
+				<ion-item>
+					<ion-input type="text"></ion-input>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<hr>
+		<ion-row>
 			<ion-item>
-			<h2>Speaker Feedback</h2>
+	      		<button ion-button block (click)="feedback()">Submit</button>
 			</ion-item>
-	</ion-row>
-	<ion-row>
-		<ion-label center>Speaker Quality</ion-label>
-		<ion-col>
-			Very Dissatisfied
-		</ion-col>
-		<ion-col>
-			Dissatisfied
-		</ion-col>
-		<ion-col>
-			Normal
-		</ion-col>
-		<ion-col>
-			Satisfied
-		</ion-col>
-		<ion-col>
-			Very Satisfied
-		</ion-col>
+		</ion-row>
+		</ion-card>
 	</ion-row>
 	</ion-grid>
 </ion-list>

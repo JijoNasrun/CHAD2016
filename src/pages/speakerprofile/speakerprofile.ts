@@ -19,6 +19,7 @@ export class SpeakerprofilePage {
   public speakerTopic : any;
   public speakerDescription : any;
   public speakerOrganization : any;
+
   constructor(public navCtrl: NavController, public params:NavParams) {
   	this.speakerName = params.get("speakerName");
   	this.speakerEmail = params.get("speakerEmail");
@@ -28,5 +29,4 @@ export class SpeakerprofilePage {
     this.speakerDescription = params.get("speakerDescription");
     this.speakerOrganization = params.get("speakerOrganization");
   }
-
 }
