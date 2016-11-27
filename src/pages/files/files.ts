@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {InAppBrowser} from 'ionic-native';
+
 
 /*
   Generated class for the Files page.
@@ -18,5 +20,12 @@ export class FilesPage {
   ionViewDidLoad() {
     console.log('Hello FilesPage Page');
   }
+
+  openCordovaWebView()
+ {
+	let browser = new InAppBrowser('https://ionic.io', '_system');
+	browser.show();
+ }
+
 
 }
