@@ -22,8 +22,8 @@
 		<ion-col></ion-col>
 	</ion-row>
 	<ion-row>
-		<ion-col>
-			Speaker Description{{speakerDescription}}
+		<ion-col text-center>
+			{{speakerDescription}}
 		</ion-col>
 	</ion-row>
 	<ion-row>
@@ -40,7 +40,7 @@
 	</ion-row>
 	<ion-row padding-top>
 		<ion-col>
-			<h1>Speaker Topic{{speakerTopic}}</h1>
+			<h1>{{speakerTopic}}</h1>
 		</ion-col>
 	</ion-row>
 	<ion-row>
@@ -63,6 +63,7 @@
 				<h2><strong>Speaker Feedback</strong></h2><hr>
 			</ion-card-header>
 		<ion-row>
+			<div class="feedback">
 			<ion-list radio-group>
 				<ion-list-header>
 					Speaker Quality
@@ -103,10 +104,12 @@
 					</ion-radio>
 				</ion-item>
 			</ion-list>
+			</div>
 		</ion-row>
 		<hr>
 		
 		<ion-row>
+			<div class="feedback">
 			<ion-list radio-group>
 				<ion-list-header>
 					Content Value and Relevance
@@ -146,6 +149,7 @@
 					</ion-radio>
 				</ion-item>
 			</ion-list>
+			</div>
 		</ion-row>
 		<hr>
 		<ion-row>

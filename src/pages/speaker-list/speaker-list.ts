@@ -19,8 +19,7 @@ export class SpeakerListPage {
 
 	  constructor(public navCtrl: NavController, public http: Http) {
 	  	this.http.get('http://10.163.1.105:8080/mobile_participants/index.json').map(res => res.json()).subscribe(data => {
-	  		this.speaker = data.participants;
-	  		//presenters
+	  		this.speaker = data.presenters;
 	  	});
 	  }
 	  goToSpeakerPage(speakername, speakeremail, speakerid, speakerimage, speakertopic, speakerdescription, speakerorganization){

@@ -28,8 +28,8 @@ export class MyApp {
       { title: 'Profile', component: ProfilePage },
       { title: 'Tentative', component: TentativePage },
       { title: 'Participant List', component: ParticipantListPage },
-      { title: 'Speaker List', component: SpeakerListPage },
-      { title: 'Library', component: FilesPage }
+      { title: 'Speaker List', component: SpeakerListPage }
+      
     ];
 
   }
@@ -48,4 +48,8 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
+   openCordovaWebView()
+ {
+  window.open('ftp://192.168.11.73', '_blank');  
+ }
 }
