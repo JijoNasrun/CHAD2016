@@ -8,12 +8,13 @@
   </ion-navbar>
 </ion-header>
 
-<!-- reg_fullname, reg_email -->
+<!-- reg_fullname, reg_email 
+        <img src="http://10.163.1.105:8080/uploads/registration/reg_image/{{person.registrations_id}}/{{person.reg_image}}">-->
 <ion-content padding>
   <ion-list>
     <ion-item *ngFor="let person of speaker" (click)="goToSpeakerPage(person.reg_fullname,person.reg_email,person.id,person.reg_image,person.presenter_topic,person.presenter_description,person.reg_organization)">
       <ion-avatar item-left>
-        <img src="http://10.163.1.105:8080/uploads/registration/reg_image/{{person.registrations_id}}/{{person.reg_image}}">
+        <img text-center src="http://greatives.eu/themes/osmosis-corporate/wp-content/uploads/2014/12/person-01.png">
       </ion-avatar>
       <h2>{{person.reg_fullname}}</h2>
       <p>{{person.reg_email}}</p>
