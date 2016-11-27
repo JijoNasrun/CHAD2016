@@ -4,14 +4,14 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Participant</ion-title>
+    <ion-title>Committee</ion-title>
   </ion-navbar>
 </ion-header>
 
 <!-- reg_fullname, reg_email -->
 <ion-content padding>
 	<ion-list>
-    <ion-item *ngFor="let person of participant">
+    <ion-item *ngFor="let person of committee">
       <ion-avatar item-left>
         <img src="http://10.163.1.105:8080/uploads/registration/reg_image/{{person.registrations_id}}/{{person.reg_image}}">
       </ion-avatar>

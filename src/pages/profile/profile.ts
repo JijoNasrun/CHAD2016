@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 /*
   Generated class for the Profile page.
@@ -12,11 +14,7 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'profile.html'
 })
 export class ProfilePage {
-
-  constructor(public navCtrl: NavController) {}
-
-  ionViewDidLoad() {
-    console.log('Hello ProfilePage Page');
+  constructor(public navCtrl: NavController) {
   }
-
+ 
 }

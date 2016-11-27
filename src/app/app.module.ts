@@ -7,6 +7,7 @@ import { FilesPage } from '../pages/files/files';
 import { ProfilePage } from '../pages/profile/profile'
 import { ParticipantListPage } from '../pages/participant-list/participant-list';
 import { SpeakerListPage } from '../pages/speaker-list/speaker-list';
+import { CommitteeListPage } from '../pages/committee-list/committee-list';
 import { FeedbacksPage } from '../pages/feedbacks/feedbacks';
 import { PollsPage } from '../pages/polls/polls';
 import { TentativePage } from '../pages/tentative/tentative';
@@ -24,6 +25,7 @@ import { SpeakerprofilePage } from '../pages/speakerprofile/speakerprofile';
     SpeakerListPage,
     FilesPage,
     SpeakerprofilePage,
+    CommitteeListPage,
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -39,6 +41,7 @@ import { SpeakerprofilePage } from '../pages/speakerprofile/speakerprofile';
     SpeakerListPage,
     FilesPage,
     SpeakerprofilePage,
+    CommitteeListPage,
   ],
   providers: []
 })

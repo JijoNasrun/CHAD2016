@@ -7,6 +7,7 @@ import { FilesPage } from '../pages/files/files';
 import { ProfilePage } from '../pages/profile/profile'
 import { ParticipantListPage } from '../pages/participant-list/participant-list';
 import { SpeakerListPage } from '../pages/speaker-list/speaker-list';
+import { CommitteeListPage } from '../pages/committee-list/committee-list';
 import { TentativePage } from '../pages/tentative/tentative';
 
 
@@ -28,6 +29,7 @@ export class MyApp {
       { title: 'Profile', component: ProfilePage },
       { title: 'Tentative', component: TentativePage },
       { title: 'Participant List', component: ParticipantListPage },
+      { title: 'Committee List', component: CommitteeListPage },
       { title: 'Speaker List', component: SpeakerListPage }
       
     ];
