@@ -5,10 +5,11 @@
 </ion-header>
 
 <ion-content id="login" padding scroll="false">
-    <form>
-      <ion-item>
-      <img width="150px" height="200px" src="../assets/images/logochad.png">
-      </ion-item>
+  <ion-item margin-horizontal text-center>
+    <img width="150px" height="200px" src="assets/images/logochad.png">
+    <h1 padding>CHAD 2016</h1>
+  </ion-item>
+  <ion-list>
     <ion-item>
       <ion-label floating>Email</ion-label>
         <ion-input type="text" name="email"></ion-input>
@@ -20,5 +21,5 @@
     <ion-item>
       <button ion-button block (click)="login()">Login</button>
     </ion-item>
-  </form>
+  </ion-list>
 </ion-content>

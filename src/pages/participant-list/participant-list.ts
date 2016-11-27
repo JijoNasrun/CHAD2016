@@ -16,7 +16,7 @@ export class ParticipantListPage {
 	public participant: any;
 
 	  constructor(public navCtrl: NavController, public http: Http) {
-	  	this.http.get('http://192.168.0.222:3000/mobile_participants/index.json').map(res => res.json()).subscribe(data => {
+	  	this.http.get('http://10.163.1.105:8080/mobile_participants/index.json').map(res => res.json()).subscribe(data => {
 	  		this.participant = data.participants;
 	  	});
 	  }

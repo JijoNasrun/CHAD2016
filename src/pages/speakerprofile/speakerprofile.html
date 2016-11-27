@@ -5,15 +5,78 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>{{speakerName}}'S PROFILE</ion-title>
+    <ion-title text-capitalize>{{speakerName}}</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
-<h3>Name : {{speakerName}}</h3>
-<h3>Email : {{speakerEmail}}</h3>
+<ion-list>
+	<ion-grid>
+	<ion-row>
+		<ion-col>
+        	<img src="http://10.163.1.105:8080/uploads/registration/reg_image/{{speakerID}}/{{speakerImage}}">
+		</ion-col>
+	</ion-row>
+	<ion-row>
+		<ion-col>
+			Speaker Description{{speakerDescription}}
+		</ion-col>
+	</ion-row>
+	<ion-row>
+		<ion-col>
+      		<button ion-button block><ion-icon name="document" padding-right></ion-icon>
+				View Slides
+			</button>
+		</ion-col>
+		<ion-col>
+      		<button ion-button block><ion-icon name="list" padding-right></ion-icon>
+				View Polls
+			</button>
+		</ion-col>
+	</ion-row>
+	<ion-row padding-top>
+		<ion-col>
+			<h1>Speaker Topic{{speakerTopic}}</h1>
+		</ion-col>
+	</ion-row>
+	<ion-row>
+		<ion-col>
+			<ion-card>
+				<ion-item>
+					<ion-avatar item-left>
+        				<img src="http://10.163.1.105:8080/uploads/registration/reg_image/{{speakerID}}/{{speakerImage}}">
+					</ion-avatar>
+					<h2>{{speakerName}}</h2>
+					<p>{{speakerEmail}}</p>
+					<p>{{speakerOrganization}}</p>
+				</ion-item>
+			</ion-card>
+		</ion-col>
+	</ion-row>
+	<ion-row>
+			<ion-item>
+			<h2>Speaker Feedback</h2>
+			</ion-item>
+	</ion-row>
+	<ion-row>
+		<ion-label center>Speaker Quality</ion-label>
+		<ion-col>
+			Very Dissatisfied
+		</ion-col>
+		<ion-col>
+			Dissatisfied
+		</ion-col>
+		<ion-col>
+			Normal
+		</ion-col>
+		<ion-col>
+			Satisfied
+		</ion-col>
+		<ion-col>
+			Very Satisfied
+		</ion-col>
+	</ion-row>
+	</ion-grid>
+</ion-list>
 </ion-content>

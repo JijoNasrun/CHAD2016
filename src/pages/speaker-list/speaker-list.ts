@@ -23,13 +23,16 @@ export class SpeakerListPage {
 	  		//presenters
 	  	});
 	  }
-	  goToSpeakerPage(speakername, speakeremail, speakerimage){
+	  goToSpeakerPage(speakername, speakeremail, speakerid, speakerimage, speakertopic, speakerdescription, speakerorganization){
 	  	this.navCtrl.push(SpeakerprofilePage, {
 	  		speakerName: speakername,
 	  		speakerEmail: speakeremail,
-	  		speakerImage: speakerimage
+	  		speakerImage: speakerimage,
+	  		speakerID: speakerid,
+	  		speakerTopic: speakertopic,
+	  		speakerDescription: speakerdescription,
+	  		speakerOrganization: speakerorganization
 	  		});
-	  	//, {speakerName : speakername, speakerEmail : speakeremail}
 	  }
 
 }
