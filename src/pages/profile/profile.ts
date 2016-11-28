@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { NavController, NavParams } from 'ionic-angular';
 
 /*
   Generated class for the Profile page.
@@ -14,7 +12,11 @@ import 'rxjs/add/operator/map';
   templateUrl: 'profile.html'
 })
 export class ProfilePage {
-  constructor(public navCtrl: NavController) {
-  }
- 
+
+	public userData: any;
+
+	  constructor(public navCtrl: NavController, public params: NavParams) {
+	  	this.userData = params.get("userdata");
+	  }
+	 
 }

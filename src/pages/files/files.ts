@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import {InAppBrowser} from 'ionic-native';
-
+import { NavController} from 'ionic-angular';
+import { InAppBrowser } from 'ionic-native';
 
 /*
   Generated class for the Files page.
@@ -23,7 +22,8 @@ export class FilesPage {
 
   openCordovaWebView()
  {
-	window.open('ftp://192.168.11.73', '_system');	
+	 let browser = new InAppBrowser('ftp://10.168.11.73', '_self');
+   browser.show();
  }
 
 

@@ -6,26 +6,26 @@
 
 <ion-content id="login" padding scroll="false">
   <ion-item margin-horizontal text-center>
-    <img src="assets/images/logochad.png">
-    <h1 padding>CHAD 2016</h1>
+    <img src="assets/images/logochad.png"><br>
+    <img src="assets/images/chad2016.png">
   </ion-item>
-  <ion-list>
+  <ion-list inset>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+    <p text-center *ngIf="loginAttempt" style="color: #ea6153;">Please fill in the credentials correctly</p>
     <ion-item>
       <ion-label floating>Email</ion-label>
-        <ion-input type="text" name="email"></ion-input>
+      <ion-input type="text" name="email" formControlName="email"></ion-input>
+      <p [hidden]="loginForm.get('email').valid" danger padding-left>Please enter your email</p>
     </ion-item>
     <ion-item>
       <ion-label floating>Password</ion-label>
-        <ion-input type="password" name="password"></ion-input>
+      <ion-input type="password" name="password" formControlName="password"></ion-input>
+      <p [hidden]="loginForm.get('password').valid" danger padding-left>Please enter your password</p>
     </ion-item>
     <ion-item>
-      <button ion-button block (click)="login()">Login</button>
+      <button ion-button block [disabled]="!loginForm.get('email').valid || !loginForm.get('password').valid">Login<ion-icon name="contact" padding-left></ion-icon></button>
     </ion-item>
-  </ion-list>
-  <ion-list>
-        <img src="assets/images/akept.png">
-        <img src="assets/images/kpt.png">
-        <img src="assets/images/uitm.png">
+    </form>
   </ion-list>
 </ion-content>
 
