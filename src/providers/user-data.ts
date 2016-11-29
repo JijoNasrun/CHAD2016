@@ -12,4 +12,7 @@ export class UserData {
 
   public userdata:any;
   
+  public updateData(loginData){
+  	this.userdata = loginData;
+  }
 }

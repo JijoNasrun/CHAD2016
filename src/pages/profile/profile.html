@@ -23,8 +23,8 @@
 		<ion-row>
 			<ion-card>
 				<ion-item padding>
-					<h2>Name :</h2>
-					<p>Email :</p>
+					<h2>Name : {{this.userData.userdata.reg_fullname}}</h2>
+					<p>Email : {{this.userData.userdata.reg_email}}</p>
 				</ion-item>
 			</ion-card>
 		</ion-row>
@@ -34,16 +34,16 @@
 					Oral Health Status
 				</ion-list-header>
 				<ion-item>
-					<ion-label>Decay : tooth</ion-label>
+					<ion-label>Decay : {{this.userData.userdata.ohs_decay}} tooth</ion-label>
 				</ion-item>
 				<ion-item>
-					<ion-label>Missing : tooth</ion-label>
+					<ion-label>Missing : {{this.userData.userdata.ohs_missing}} tooth</ion-label>
 				</ion-item>
 				<ion-item>
-					<ion-label>Filled : tooth</ion-label>
+					<ion-label>Filled : {{this.userData.userdata.ohs_filled}} tooth</ion-label>
 				</ion-item>
 				<ion-item>
-					<ion-label>Carries Risk Assessment : </ion-label>
+					<ion-label>Carries Risk Assessment : {{this.userData.userdata.ohs_risk}}</ion-label>
 				</ion-item>
 			</ion-card>
 		</ion-row>
@@ -53,16 +53,16 @@
 					General Health Status
 				</ion-list-header>
 				<ion-item>
-					<ion-label>BP : mm/hg</ion-label>
+					<ion-label>BP : {{this.userData.userdata.ghs_bp}} mm/hg</ion-label>
 				</ion-item>
 				<ion-item>
-					<ion-label>Heart Rate : /min</ion-label>
+					<ion-label>Heart Rate : {{this.userData.userdata.ghs_hr}} /min</ion-label>
 				</ion-item>
 				<ion-item>
-					<ion-label>Blood Glucose : mmol/l</ion-label>
+					<ion-label>Blood Glucose : {{this.userData.userdata.ghs_bg}} mmol/l</ion-label>
 				</ion-item>
 				<ion-item>
-					<ion-label>BMI : kg/m2</ion-label>
+					<ion-label>BMI : {{this.userData.userdata.ghs_bmi}} kg/m2</ion-label>
 				</ion-item>
 			</ion-card>
 		</ion-row>
@@ -72,10 +72,10 @@
 					Smoking Cessation
 				</ion-list-header>
 				<ion-item>
-					<ion-label>Carbon Monoxide : ppm</ion-label>
+					<ion-label>Carbon Monoxide : {{this.userData.userdata.sc_cm}} ppm</ion-label>
 				</ion-item>
 				<ion-item>
-					<ion-label>Fagerstrom Test : </ion-label>
+					<ion-label>Fagerstrom Test : {{this.userData.userdata.sc_test}}</ion-label>
 				</ion-item>
 			</ion-card>
 		</ion-row>

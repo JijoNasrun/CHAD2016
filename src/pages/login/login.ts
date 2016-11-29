@@ -3,9 +3,9 @@ import { ProfilePage } from '../profile/profile';
 import { NavController, MenuController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Http } from '@angular/http';
+import { UserData } from '../../providers/user-data';
 import 'rxjs/add/operator/map';
 
-import { UserData } from '../providers/user-data';
 
 @Component({
   selector: 'page-login',
@@ -22,7 +22,7 @@ export class LoginPage {
   public loginData: any;
   public loginSuccess:boolean = false;
 
-  constructor(public navCtrl: NavController, public http: Http, private builder: FormBuilder, private menu:MenuController, public userData: UserData) {
+  constructor(public navCtrl: NavController, public http: Http, private builder: FormBuilder, private menu:MenuController, public userDetails: UserData) {
   	this.loginForm = builder.group({
   		'email': ['', Validators.required],
   		'password': ['', Validators.required]
@@ -42,8 +42,7 @@ export class LoginPage {
 				for (let password of this.jsonParticipants){
 					if (this.loginData.password == password.password){
 						this.loginSuccess = true;
-						this.loginData = password;
-						this.userData = password;
+						this.userDetails.updateData(password);
 						break;
 					}
 				}
@@ -54,8 +53,7 @@ export class LoginPage {
 				for (let password of this.jsonSpeakers){
 					if (this.loginData.password == password.password){
 						this.loginSuccess = true;
-						this.loginData = password;
-						this.userData = password;
+						this.userDetails.updateData(password);
 						break;
 					}
 				}
@@ -66,8 +64,7 @@ export class LoginPage {
 				for (let password of this.jsonCommittee){
 					if (this.loginData.password == password.password){
 						this.loginSuccess = true;
-						this.loginData = password;
-						this.userData = password;
+						this.userDetails.updateData(password);
 						break;
 					}
 				}
@@ -77,9 +74,7 @@ export class LoginPage {
   			this.loginAttempt = true;
   		}
   		if(this.loginSuccess){
-  			this.navCtrl.setRoot(ProfilePage, {
-  				userData: this.loginData
-  				});
+  			this.navCtrl.setRoot(ProfilePage);
 		}
   }
 }
