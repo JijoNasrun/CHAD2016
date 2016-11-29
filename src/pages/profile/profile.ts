@@ -18,7 +18,5 @@ export class ProfilePage{
 
 	  constructor(public navCtrl: NavController, public userDetails: UserData) {
 	  	this.userData = userDetails;
-	  	console.log('User Data ', this.userData.userdata.reg_fullname);
-	  	console.log('User Details ', this.userDetails);
 	  }
 }

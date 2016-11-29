@@ -15,15 +15,6 @@ export class TentativePage {
 
   program: string = "day1";
   constructor(public navCtrl: NavController) {
-
-  
-
+    
   }
-
-  
-
-  ionViewDidLoad() {
-    console.log('Hello TentativePage Page');
-  }
-
 }
