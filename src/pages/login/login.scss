@@ -3,4 +3,17 @@ page-login {
 		width: 30%;
 		height: 30%;
 	}
+
+	ion-content{
+		background-image: url('../assets/images/loginbg.jpg');
+	}
+
+	ion-item{
+		opacity: 0.9;
+		width: auto;
+	}
+
+	form{
+		width: auto;
+	}
 }

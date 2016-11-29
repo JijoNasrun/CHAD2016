@@ -1,15 +1,9 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Login</ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content id="login" padding scroll="false">
-  <ion-item margin-horizontal text-center>
+<ion-content padding scroll="false">
+  <ion-item margin-horizontal text-center style="margin-top: 60px;">
     <img src="assets/images/logochad.png"><br>
     <img src="assets/images/chad2016.png">
   </ion-item>
-  <ion-list inset>
+  <ion-list>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
     <p text-center *ngIf="loginAttempt" style="color: #ea6153;">Please fill in the credentials correctly</p>
     <ion-item>
