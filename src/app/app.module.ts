@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { UserData } from '../providers/user-data';
 import { LoginPage } from '../pages/login/login';
 import { FilesPage } from '../pages/files/files';
 import { ProfilePage } from '../pages/profile/profile'
@@ -43,6 +44,8 @@ import { SpeakerprofilePage } from '../pages/speakerprofile/speakerprofile';
     SpeakerprofilePage,
     CommitteeListPage,
   ],
-  providers: []
+  providers: [
+    UserData
+  ]
 })
 export class AppModule {}

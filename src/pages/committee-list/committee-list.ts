@@ -18,7 +18,7 @@ export class CommitteeListPage {
 
   constructor(public navCtrl: NavController, public http: Http) {
 	  	this.http.get('http://10.163.1.105:8080/mobile_participants/index.json').map(res => res.json()).subscribe(data => {
-	  		this.committee = data.participants;
+	  		this.committee = data.committee;
 	  	});
 	  }
 

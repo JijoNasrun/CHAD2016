@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { UserData } from '../providers/user-data';
 /*
   Generated class for the Profile page.
 
@@ -11,12 +12,14 @@ import { NavController, NavParams } from 'ionic-angular';
   selector: 'page-profile',
   templateUrl: 'profile.html'
 })
-export class ProfilePage {
 
+export class ProfilePage{
 	public userData: any;
 
-	  constructor(public navCtrl: NavController, public params: NavParams) {
-	  	this.userData = params.get("userdata");
+	  constructor(public navCtrl: NavController, public params: NavParams, public userDetails: UserData) {
+	  	this.userData = this.params.get('userData');
+	  	this.userDetails = this.userData;
+	  	console.log('User data ', this.userData);
+	  	console.log('User data ', this.userDetails);
 	  }
-	 
 }

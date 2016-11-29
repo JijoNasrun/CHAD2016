@@ -15,7 +15,7 @@ import { TentativePage } from '../pages/tentative/tentative';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage = LoginPage;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -31,7 +31,6 @@ export class MyApp {
       { title: 'Speaker List', component: SpeakerListPage }
       
     ];
-
   }
 
   initializeApp() {
@@ -42,7 +41,7 @@ export class MyApp {
       Splashscreen.hide();
     });
   }
-
+  
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
@@ -50,7 +49,6 @@ export class MyApp {
   }
    openCordovaWebView()
  {
-    
      new InAppBrowser('ftp://10.163.232.76', '_self');
  }
 }
