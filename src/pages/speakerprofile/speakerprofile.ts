@@ -65,7 +65,7 @@ export class SpeakerprofilePage {
     this.http.post('//10.163.1.105:8081/feedbacks', feedBack)
      .map(res => res.json())
      .subscribe(data =>  { 
-      console.log('Post Data ' , data._body);
+        this.feedbackData = data._body;
       }, err => console.log('Error ', err));
   }
   openDrive(){
