@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
-import { StatusBar, Splashscreen,InAppBrowser } from 'ionic-native';
+import { StatusBar, Splashscreen} from 'ionic-native';
 import { LoginPage } from '../pages/login/login';
 import { ProfilePage } from '../pages/profile/profile'
 import { ParticipantListPage } from '../pages/participant-list/participant-list';
@@ -47,8 +47,4 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
-   openCordovaWebView()
- {
-     new InAppBrowser('ftp://10.163.232.76', '_self');
- }
 }

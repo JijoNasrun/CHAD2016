@@ -54,7 +54,6 @@ export class SpeakerprofilePage {
     var feedBack = {
       feedback
     };
-    console.log('Feedback Data', this.feedbackData);
     let alert = this.alertCtrl.create({
       title: 'Feedback Submitted',
       subTitle: 'Thank you for your feedback! :)',
@@ -62,11 +61,11 @@ export class SpeakerprofilePage {
       });
     alert.present();
     this.feedbackSubmitted = true;
-    this.http.post('//10.163.1.105:8081/feedbacks', feedBack)
+    this.http.post('http://10.163.1.105:8081/feedbacks', feedBack)
      .map(res => res.json())
      .subscribe(data =>  { 
         this.feedbackData = data._body;
-      }, err => console.log('Error ', err));
+      });
   }
   openDrive(){
     let browser = new InAppBrowser(this.driveUrl, '_self');
