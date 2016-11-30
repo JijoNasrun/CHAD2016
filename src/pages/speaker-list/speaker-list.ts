@@ -22,7 +22,7 @@ export class SpeakerListPage {
 	  		this.speaker = data.presenters;
 	  	});
 	  }
-	  goToSpeakerPage(speakername, speakeremail, speakerid, speakerimage, speakertopic, speakerdescription, speakerorganization){
+	  goToSpeakerPage(speakername, speakeremail, speakerid, speakerimage, speakertopic, speakerdescription, speakerorganization, speakerurl){
 	  	this.navCtrl.push(SpeakerprofilePage, {
 	  		speakerName: speakername,
 	  		speakerEmail: speakeremail,
@@ -30,7 +30,8 @@ export class SpeakerListPage {
 	  		speakerID: speakerid,
 	  		speakerTopic: speakertopic,
 	  		speakerDescription: speakerdescription,
-	  		speakerOrganization: speakerorganization
+	  		speakerOrganization: speakerorganization,
+	  		speakerURL: speakerurl
 	  		});
 	  }
 

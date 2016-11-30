@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
+import { LoginPage } from '../login/login';
 import { UserData } from '../../providers/user-data';
 /*
   Generated class for the Profile page.
@@ -19,4 +19,7 @@ export class ProfilePage{
 	  constructor(public navCtrl: NavController, public userDetails: UserData) {
 	  	this.userData = userDetails;
 	  }
+  logOut(){
+    this.navCtrl.setRoot(LoginPage);
+  }
 }

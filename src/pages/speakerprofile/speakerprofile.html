@@ -17,7 +17,7 @@
 		<!--<img src="http://10.163.1.105:8080/uploads/registration/reg_image/{{speakerID}}/{{speakerImage}}">-->
 		<ion-col></ion-col>
 		<ion-col>
-        	<img text-center src="http://greatives.eu/themes/osmosis-corporate/wp-content/uploads/2014/12/person-01.png">
+        	<img src="http://10.163.1.105:8080/uploads/registration/reg_image/{{speakerID}}/{{speakerImage}}">
 		</ion-col>
 		<ion-col></ion-col>
 	</ion-row>
@@ -28,15 +28,15 @@
 	</ion-row>
 	<ion-row>
 		<ion-col>
-      		<button ion-button block><ion-icon name="document" padding-right></ion-icon>
+      		<button ion-button block (click)="openDrive()"><ion-icon name="document" padding-right></ion-icon>
 				View Slides
 			</button>
 		</ion-col>
-		<ion-col>
+		<!--<ion-col>
       		<button ion-button block><ion-icon name="list" padding-right></ion-icon>
 				View Polls
 			</button>
-		</ion-col>
+		</ion-col>-->
 	</ion-row>
 	<ion-row padding-top>
 		<ion-col>
@@ -50,23 +50,23 @@
 			<ion-card>
 				<ion-item padding>
 					<ion-avatar item-left>
-					<img text-center src="http://greatives.eu/themes/osmosis-corporate/wp-content/uploads/2014/12/person-01.png">
+        				<img src="http://10.163.1.105:8080/uploads/registration/reg_image/{{speakerID}}/{{speakerImage}}">
 					</ion-avatar>
 					<h2>{{speakerName}}</h2>
-					<p>{{speakerEmail}}</p>
 					<p>{{speakerOrganization}}</p>
 				</ion-item>
 			</ion-card>
 		</ion-col>
 	</ion-row>
 	<ion-row>
-		<ion-card>
+		<ion-card *ngIf="!feedbackSubmitted">
+		<form [formGroup]="feedbackForm" (ngSubmit)="onSubmit(feedbackForm.value)">
 			<ion-card-header>
 				<h2><strong>Speaker Feedback</strong></h2><hr>
 			</ion-card-header>
 		<ion-row>
 			<div class="feedback">
-			<ion-list radio-group>
+			<ion-list radio-group formControlName="q1">
 				<ion-list-header>
 					Speaker Quality
 				</ion-list-header>
@@ -94,7 +94,7 @@
 				
 				<ion-item>
 					<ion-label>Satisfied</ion-label>
-					<ion-radio value="4"> 
+					<ion-radio value="4" checked> 
 					<ion-icon name="checkmark-circle-outline"></ion-icon>
 					</ion-radio>
 				</ion-item>
@@ -112,7 +112,7 @@
 		
 		<ion-row>
 			<div class="feedback">
-			<ion-list radio-group>
+			<ion-list radio-group formControlName="q2">
 				<ion-list-header>
 					Content Value and Relevance
 				</ion-list-header>
@@ -139,7 +139,7 @@
 				
 				<ion-item>
 					<ion-label>Satisfied</ion-label>
-					<ion-radio value="4"> 
+					<ion-radio value="4" checked> 
 					<ion-icon name="checkmark-circle-outline"></ion-icon>
 					</ion-radio>
 				</ion-item>
@@ -155,23 +155,20 @@
 		</ion-row>
 		<hr>
 		<ion-row>
-			<ion-col width-33>
-				<ion-item>
-					<ion-label text-center>Please leave any comment</ion-label>
-				</ion-item>
-			</ion-col>
 			<ion-col>
 				<ion-item>
-					<ion-input type="text"></ion-input>
+					<ion-label floating text-center>Please leave any comment</ion-label>
+					<ion-input type="text" formControlName="desc"></ion-input>
 				</ion-item>
 			</ion-col>
 		</ion-row>
 		<hr>
 		<ion-row>
 			<ion-item>
-	      		<button ion-button block>Submit</button>
+	      		<button ion-button block [disabled]="!feedbackForm.get('q1').valid || !feedbackForm.get('q2').valid">Submit</button>
 			</ion-item>
 		</ion-row>
+		</form>
 		</ion-card>
 	</ion-row>
 	</ion-grid>

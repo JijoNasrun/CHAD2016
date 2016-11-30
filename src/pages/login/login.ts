@@ -4,6 +4,7 @@ import { NavController, MenuController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Http } from '@angular/http';
 import { UserData } from '../../providers/user-data';
+import { ToastController } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 
 
@@ -13,16 +14,17 @@ import 'rxjs/add/operator/map';
 })
 
 export class LoginPage {
-
+  public speakerQuality : any;
+  public contentValue : any;
+  public commentData : any;
   loginForm: FormGroup;
   public jsonParticipants: any;
   public jsonSpeakers: any;
   public jsonCommittee: any;
-  public loginAttempt:boolean = false;
   public loginData: any;
   public loginSuccess:boolean = false;
 
-  constructor(public navCtrl: NavController, public http: Http, private builder: FormBuilder, private menu:MenuController, public userDetails: UserData) {
+  constructor(public navCtrl: NavController, public http: Http, private builder: FormBuilder, private menu:MenuController, public userDetails: UserData, public toastCtrl: ToastController) {
   	this.loginForm = builder.group({
   		'email': ['', Validators.required],
   		'password': ['', Validators.required]
@@ -71,7 +73,11 @@ export class LoginPage {
 			}
 		}
   		if (this.loginSuccess == false){
-  			this.loginAttempt = true;
+  			let toast = this.toastCtrl.create({
+  				message: 'Please fill in the credentials correctly',
+  				duration: 3000
+  				});
+  			toast.present();
   		}
   		if(this.loginSuccess){
   			this.navCtrl.setRoot(ProfilePage);

@@ -5,6 +5,9 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Profile</ion-title>
+    <ion-buttons end>
+		<button ion-button color="danger" (click)="logOut()">Logout</button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -15,8 +18,9 @@
 		<ion-row>
 			<!--<img src="http://10.163.1.105:8080/uploads/registration/reg_image/{{speakerID}}/{{speakerImage}}">-->
 			<ion-col></ion-col>
-			<ion-col>
-	        	<img text-center src="http://greatives.eu/themes/osmosis-corporate/wp-content/uploads/2014/12/person-01.png">
+			<ion-col> 
+				<img *ngIf="this.userData.userdata.participant_type != 'Speaker'" src="assets/images/defaultavatar.png">
+				<img *ngIf="this.userData.userdata.participant_type == 'Speaker'" src="http://10.163.1.105:8080/uploads/registration/reg_image/{{this.userData.userdata.registrations_id}}/{{this.userData.userdata.reg_image}}">
 			</ion-col>
 			<ion-col></ion-col>
 		</ion-row>
@@ -24,7 +28,7 @@
 			<ion-card>
 				<ion-item padding>
 					<h2>Name : {{this.userData.userdata.reg_fullname}}</h2>
-					<p>Email : {{this.userData.userdata.reg_email}}</p>
+					<p>{{this.userData.userdata.reg_organization}}</p>
 				</ion-item>
 			</ion-card>
 		</ion-row>
