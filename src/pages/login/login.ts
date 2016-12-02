@@ -22,6 +22,7 @@ export class LoginPage {
   public jsonSpeakers: any;
   public jsonCommittee: any;
   public loginData: any;
+  public profileData: any;
   public loginSuccess:boolean = false;
 
   constructor(public navCtrl: NavController, public http: Http, private builder: FormBuilder, private menu:MenuController, public userDetails: UserData, public toastCtrl: ToastController) {
@@ -44,7 +45,8 @@ export class LoginPage {
 				for (let password of this.jsonParticipants){
 					if (this.loginData.password == password.password){
 						this.loginSuccess = true;
-						this.userDetails.updateData(password);
+						this.profileData = email;
+						this.userDetails.updateData(this.profileData);
 						break;
 					}
 				}
@@ -55,7 +57,8 @@ export class LoginPage {
 				for (let password of this.jsonSpeakers){
 					if (this.loginData.password == password.password){
 						this.loginSuccess = true;
-						this.userDetails.updateData(password);
+						this.profileData = email;
+						this.userDetails.updateData(this.profileData);
 						break;
 					}
 				}
@@ -66,7 +69,8 @@ export class LoginPage {
 				for (let password of this.jsonCommittee){
 					if (this.loginData.password == password.password){
 						this.loginSuccess = true;
-						this.userDetails.updateData(password);
+						this.profileData = email;
+						this.userDetails.updateData(this.profileData);
 						break;
 					}
 				}

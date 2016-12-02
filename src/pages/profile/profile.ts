@@ -18,6 +18,7 @@ export class ProfilePage{
 
 	  constructor(public navCtrl: NavController, public userDetails: UserData) {
 	  	this.userData = userDetails;
+      console.log('Profile Data ', this.userData.userdata);
 	  }
   logOut(){
     this.navCtrl.setRoot(LoginPage);
